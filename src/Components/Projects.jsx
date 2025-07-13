@@ -20,7 +20,7 @@ const projects = [
         source: websitePortfolio,
         technologies: ['ReactJS', 'Tailwind', 'JavaScript'],
         livePreview: '#',
-        code: '',
+        code: 'https://github.com/ajoshuauc/Portfolio-Website',
     },
     {
         name: 'Memory Online Multiverse',

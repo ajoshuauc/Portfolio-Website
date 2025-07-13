@@ -1,36 +1,87 @@
+import { useState,useEffect } from 'react';
+
 import moonImage from '../assets/Moon.png';
 
-function Landing() {
-  return (
-    <section id="Landing" className="flex flex-col md:flex-row items-center justify-between px-6 pt-16 sm:pt-24 md:pt-30 lg:pt-33 xl:pt-20 pb-16 max-w-6xl gap-5 mx-auto">
 
+
+function Landing() {
+
+  const titles = ["Full Stack Developer", "Software Engineer", "AI Engineer"];
+  const [index, setIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentTitle = titles[index];
+
+    const typingSpeed = isDeleting ? 50 : 100;
+
+    const updateText = () => {
+      setDisplayText((prev) =>
+        isDeleting
+          ? currentTitle.substring(0, prev.length - 1)
+          : currentTitle.substring(0, prev.length + 1)
+      );
+    };
+
+    const timeout = setTimeout(() => {
+      updateText();
+
+      if (!isDeleting && displayText === currentTitle) {
+        setTimeout(() => setIsDeleting(true), 1200);
+      } else if (isDeleting && displayText === "") {
+        setIsDeleting(false);
+        setIndex((prev) => (prev + 1) % titles.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, index, titles]);
+
+  return (
+    <section
+      id="Landing"
+      className="flex flex-col md:flex-row items-center justify-between px-6 pt-24 lg:pt-32 xl:pt-20 pb-16 max-w-6xl gap-10 mx-auto"
+    >
       {/* Moon Image */}
-      <div className="w-74 sm:w-64 md:w-2xl lg:w-[32rem] xl:w-[38rem] glowing-moon">
-        <img
-          src={moonImage}
-          alt="Moon"
-          className="w-full h-auto drop-shadow-[0_0_24px_#A1F6FF]"
-        />
-      </div>
+      <div className="w-64 sm:w-64 md:w-2xl lg:w-[32rem] xl:w-[38rem] glowing-moon -mb-12">
+    <img
+      src={moonImage}
+      alt="Moon"
+      className="w-full h-auto drop-shadow-[0_0_24px_#A1F6FF]"
+    />
+</div>
 
       {/* Text Container */}
-      <div className="text-center md:text-left text-textcolor px-6 max-w-xl space-y-5 w-full">
+      <div className="text-center md:text-left text-textcolor px-6 max-w-xl space-y-6 w-full">
         <h1 className="text-3xl md:text-5xl font-extrabold leading-snug">
-          Hi <span className="inline-block animate-wave">👋</span>,<br />
-          I'm <span className="text-secondary drop-shadow-[0_0_12px_#A1F6FF]">Anthony</span>,<br />
-          <span className="text-white">Full Stack Engineer</span>
-        </h1> 
+      Hi <span className="inline-block animate-wave">👋</span>,<br />
+      I'm <span className="text-secondary drop-shadow-[0_0_12px_#A1F6FF]">Anthony</span>,<br />
+      <span className="text-white pr-1 relative">
+        {displayText}
+        <span className="absolute right-0 top-0 h-full w-[2px] bg-white blinking-cursor"></span>
+      </span>
 
-        <p className="text-sm md:text-md lg:text-lg leading-relaxed text-slate-300">
-          I create intuitive full-stack apps and love integrating AI into user-friendly experiences.
-          I'm a graduate of <span className="text-white font-medium white-space-no">De La Salle University – Dasmariñas</span> and passionate about web development and AI.
+    </h1>
+
+        <p className="text-sm md:text-base lg:text-lg leading-relaxed text-slate-300">
+          I build intuitive full-stack apps and enjoy integrating AI to enhance user experiences.
+          A graduate of <span className="text-white font-medium">De La Salle University – Dasmariñas</span>, I am passionate about web development and AI.
         </p>
 
-        <div className="flex gap-4 pt-4 justify-center md:justify-start">
-          <a href="#Contacts" className="px-5 py-2 border border-secondary text-secondary rounded-md hover:bg-secondary hover:text-primary transition">
+        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+          <a
+            href="#Contacts"
+            className="px-3 py-1.5 sm:px-4 sm:py-2 text-center border border-secondary text-secondary rounded-md text-xs sm:text-sm md:text-base hover:bg-secondary hover:text-primary transition whitespace-nowrap"
+          >
             Contacts
           </a>
-          <a href="https://drive.google.com/drive/folders/1RZZnGzu6ElpJEzHeV1dqkn1GNoK8hnla?usp=sharing" target="_blank" rel="noreferrer" className="px-5 py-2 bg-secondary text-primary font-semibold rounded-md hover:brightness-110 transition">
+          <a
+            href="https://drive.google.com/drive/folders/1RZZnGzu6ElpJEzHeV1dqkn1GNoK8hnla?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="px-3 py-1.5 sm:px-4 sm:py-2 text-center bg-secondary text-primary font-semibold rounded-md text-xs sm:text-sm md:text-base hover:brightness-110 transition whitespace-nowrap"
+          >
             Download Resume
           </a>
         </div>
