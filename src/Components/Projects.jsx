@@ -16,7 +16,7 @@ const projects = [
     },
     {
         name: 'Website Portfolio',
-        description: 'This website that you are currently looking at. A responsive personal portfolio built with React and Tailwind CSS. Features smooth scrolling, interactive animations, and clean UI to showcase skills, projects, and experience.',
+        description: 'This website you are currently viewing. A responsive personal portfolio built with React and Tailwind CSS. Features smooth scrolling, interactive animations, and clean UI to showcase skills, projects, and experience.',
         source: websitePortfolio,
         technologies: ['ReactJS', 'Tailwind', 'JavaScript'],
         livePreview: '#',
