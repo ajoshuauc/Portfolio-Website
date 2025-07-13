@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import 'material-symbols/outlined.css';
+
+
+@theme {
+    --color-primary: #0F172A;
+    --color-textcolor: #F1F5F9;
+    --color-cards: #182A35;
+    --color-secondary: #A1F6FF;
+    --color-moon: #A7F6F6;
+}
+
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20%, 40% { transform: rotate(-8deg); }
+}
+.animate-wave {
+  display: inline-block;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+.glowing-moon {
+  animation: levitate 6s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+body {
+    min-height: 100vh;
+    background-image: url(./assets/Stars_Vector.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0f172a;
+    font-family: Poppins;
+    color: rgb(241, 245, 249);
+}
+
+
+
+/* nav {
+    background-color: rgb(15, 23, 42);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.custom-menu-icon {
+    color: #f0f0f0;
+} */
+
+

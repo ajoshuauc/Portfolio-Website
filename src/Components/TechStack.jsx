@@ -1,0 +1,62 @@
+
+import html5 from '../assets/HTML5.png'
+import css from '../assets/CSS3.png'
+import javascript from '../assets/Javascript.png'
+import python from '../assets/Python.png'
+import java from '../assets/Java.png'
+import git from '../assets/github.png'
+import react from '../assets/React.png'
+import nodejs from '../assets/Nodejs.png'
+import mongodb from '../assets/MongoDB.png'
+import tensorflow from '../assets/tensorflow-original.png'
+import numpy from '../assets/numpy.png'
+import pandas from '../assets/pandas.png'
+import scikitLearn from '../assets/scikit-learn.png'
+
+
+const techStack = [
+
+  {name: 'HTML', source: html5},
+  {name: 'CSS', source: css},
+  {name: 'JavaScript', source: javascript},
+  {name: 'Python', source: python},
+  {name: 'Java', source: java},
+  {name: 'Git', source: git},
+  {name: 'React', source: react},
+  {name: 'NodeJS', source: nodejs},
+  {name: 'MongoDB', source: mongodb},
+  {name: 'TensorFlow', source: tensorflow},
+  {name: 'Numpy', source: numpy},
+  {name: 'Pandas', source: pandas},
+  {name: 'Scikit-learn', source: scikitLearn},
+
+];
+
+function TechStack() {
+  return (
+
+    <section id="TechStack" className="py-16 px-6 max-w-3xl mx-auto">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center text-textcolor mb-10">Tech Stack</h2>
+
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-y-5 place-items-center">
+        {techStack.map((tech) => (
+        <div
+          key={tech.name}
+          className="bg-cards rounded-sm w-32 h-36 flex flex-col items-center justify-center border border-[#2c3e50] hover:border-secondary hover:rounded-2xl hover:shadow-[0_0_12px_#A1F6FF] transition-all duration-200"
+        >
+        <img
+          src={tech.source}
+          alt={tech.name}
+          className="w-14 h-14 mb-2 object-contain"
+        />
+        <p className="text-sm text-center text-textcolor font-bold mt-3">{tech.name}</p>
+        </div>
+
+
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export default TechStack;
