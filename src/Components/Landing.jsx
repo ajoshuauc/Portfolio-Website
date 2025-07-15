@@ -1,7 +1,5 @@
 import { useState,useEffect } from 'react';
-
 import moonImage from '../assets/Moon.png';
-
 
 
 function Landing() {
@@ -41,10 +39,10 @@ function Landing() {
   return (
     <section
       id="Landing"
-      className="flex flex-col md:flex-row items-center justify-between px-6 pt-24 lg:pt-32 xl:pt-20 pb-16 max-w-6xl gap-10 mx-auto"
+      className="flex flex-col md:flex-row items-center justify-between px-6 pt-14 sm:pt-24 lg:pt-32 xl:pt-20 pb-16 max-w-6xl gap-10 mx-auto"
     >
       {/* Moon Image */}
-      <div className="w-64 sm:w-64 md:w-2xl lg:w-[32rem] xl:w-[38rem] glowing-moon -mb-12">
+      <div className="w-64 -mt-10 sm:w-64 md:w-2xl lg:w-[32rem] xl:w-[38rem] glowing-moon -mb-12">
     <img
       src={moonImage}
       alt="Moon"
@@ -54,19 +52,19 @@ function Landing() {
 
       {/* Text Container */}
       <div className="text-center md:text-left text-textcolor px-6 max-w-xl space-y-6 w-full">
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-snug">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-snug">
       Hi <span className="inline-block animate-wave">👋</span>,<br />
       I'm <span className="text-secondary drop-shadow-[0_0_12px_#A1F6FF]">Anthony</span>,<br />
-      <span className="text-white pr-1 relative">
+      <span className="text-white max-sm:text-2xl pr-1 relative">
         {displayText}
         <span className="absolute right-0 top-0 h-full w-[2px] bg-white blinking-cursor"></span>
       </span>
 
     </h1>
 
-        <p className="text-sm md:text-base lg:text-lg leading-relaxed text-slate-300">
-          I build intuitive full-stack apps and enjoy integrating AI to enhance user experiences.
-          A graduate of <span className="text-white font-medium">De La Salle University – Dasmariñas</span>, I am passionate about web development and AI.
+        <p className="text-sm md:text-md lg:text-md leading-relaxed text-slate-300">
+          I build intuitive full-stack applications and enjoy integrating AI to create smarter digital experiences.
+          I’m a graduate of <span className="text-white font-medium whitespace-nowrap">De La Salle University – Dasmariñas</span> with a passion for web development and AI.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">

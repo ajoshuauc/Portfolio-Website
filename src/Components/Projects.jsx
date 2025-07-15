@@ -42,14 +42,14 @@ const projects = [
 
 function Projects() {
     return (
-        <section id="Projects" className="py-24 px-6 sm:w-2xl md:w-3xl lg:w-4xl mx-auto">
+        <section id="Projects" className="py-24 px-6 sm:w-2xl md:w-3xl lg:w-5xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-center text-textcolor mb-10">Projects</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-5 gap-y-6 place-items-center">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="bg-cards rounded-xl w-64 h-[27rem] flex flex-col border border-[#2c3e50] hover:border-secondary shadow-[0_0_6px_#1a1a1a] hover:shadow-[0_0_16px_#A1F6FF] hover:-translate-y-2 ease-in-out transition-all duration-300 overflow-hidden"
+                        className="bg-cards rounded-xl w-72 h-[27rem] flex flex-col border border-[#2c3e50] hover:border-secondary shadow-[0_0_6px_#1a1a1a] hover:shadow-[0_0_16px_#A1F6FF] hover:-translate-y-2 ease-in-out transition-all duration-300 overflow-hidden"
                     >
                         {/* Image */}
                         <img src={project.source} className="h-40 w-full object-cover object-center" />
@@ -59,7 +59,7 @@ function Projects() {
                             <h3 className="p-2 m-1 text-lg font-bold">{project.name}</h3>
 
                             {/* Technologies Used */}
-                            <div className="flex flex-wrap justify-center gap-2 text-[0.6rem] text-secondary mb-2">
+                            <div className="flex flex-wrap justify-center gap-2 text-[0.6rem] text-secondary mb-5">
                                 {project.technologies.map((tech, techIndex) => (
                                 <span key={techIndex} className="bg-[#1A2E3A] rounded-full px-3 py-1">
                                     {tech}
@@ -68,7 +68,7 @@ function Projects() {
                             </div>
 
 
-                            <p className="text-xs text-slate-300 font-medium">{project.description}</p>
+                            <p className="text-xs text-slate-300 font-medium mb-2">{project.description}</p>
 
                             {/* Buttons */}
                             <div className="flex gap-8 mt-5 text-sm items-center">
