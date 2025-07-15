@@ -11,7 +11,7 @@ const projects = [
         description: 'A chrome extension that censors sensitive text and images on social media using DistilBERT and YOLOv8n/MobileNetV2 for real-time AI content moderation, integrated with Chrome Extensions APIs for seamless automation.',
         source: peered,
         technologies: ['Python', 'Tensorflow', 'Chrome API'],
-        livePreview: 'https://chromewebstore.google.com/detail/peered/dnccbjakelpbgieoobnjekbmnjnljjia',
+        livePreview: 'https://youtu.be/67aP4tyoaqU',
         code: 'https://github.com/ajoshuauc/PEERED-DETECTING-AND-CATEGORIZING-PEER-PRESSURE-IN-SOCIAL-MEDIA-USING-MULTI-CLASS-CLASSIFICATION',
     },
     {

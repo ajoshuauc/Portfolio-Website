@@ -7,7 +7,10 @@ import java from '../assets/Java.png'
 import git from '../assets/GitHub.png'
 import react from '../assets/React.png'
 import nodejs from '../assets/Nodejs.png'
+import express from '../assets/express.png'
 import mongodb from '../assets/MongoDB.png'
+import postman from '../assets/postman.png'
+import postgres from '../assets/postgres.png'
 import tensorflow from '../assets/tensorflow-original.png'
 import numpy from '../assets/numpy.png'
 import pandas from '../assets/pandas.png'
@@ -23,8 +26,11 @@ const techStack = [
   {name: 'Java', source: java},
   {name: 'Git', source: git},
   {name: 'React', source: react},
-  {name: 'NodeJS', source: nodejs},
+  {name: 'Node.js', source: nodejs},
+  {name: 'Express', source: express},
   {name: 'MongoDB', source: mongodb},
+  {name: 'PostgresSQL', source: postgres},
+  {name: 'Postman', source: postman},
   {name: 'TensorFlow', source: tensorflow},
   {name: 'Numpy', source: numpy},
   {name: 'Pandas', source: pandas},
